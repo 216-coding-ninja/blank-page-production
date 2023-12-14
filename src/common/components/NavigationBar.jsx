@@ -59,7 +59,10 @@ const BlankPageContact = styled(Box)(({ theme }) => ({
     padding: theme.spacing(1.2, 2),
     backgroundColor: Colors.Black,
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    [theme.breakpoints.down('md')]:{
+        justifyContent: 'flex-end'
+    }
 }))
 
 const NavigationContent = styled(Box)(({ theme }) => ({
@@ -84,7 +87,7 @@ const ContactInformation = styled(Box)(({ theme }) => ({
     display: 'flex',
     gap: theme.spacing(2),
     [theme.breakpoints.down('md')]:{
-        display: 'none'
+        display: 'none',
     }
 }))
 
@@ -102,7 +105,7 @@ const SocialImg = styled('img')({
 const SocialInformation = styled(Box)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
-    gap: theme.spacing(3)
+    gap: theme.spacing(3),
 }))
 
 const BlankPageNavigationBox = styled(Box)(({ theme }) => ({

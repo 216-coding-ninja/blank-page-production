@@ -1,4 +1,7 @@
-import { Colors } from '@/common/constants';
+import { 
+    Colors 
+} from '@/common/constants';
+
 import{
     styled,
     Box,
@@ -37,10 +40,13 @@ const IconContainer = styled('div')({
     transform: 'translateY(-50%)'
 })
 
-const InputContainer = styled('div')({
+const InputContainer = styled('div')(({ theme }) => ({
     position: 'relative',
-    display: 'inline-block'
-})
+    display: 'inline-block',
+    [theme.breakpoints.down('sm')]: {
+        display: 'none'
+    }
+}))
 
 const SearchIcon = styled('img')({
     width: '12px'

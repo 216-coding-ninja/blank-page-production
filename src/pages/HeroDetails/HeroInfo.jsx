@@ -47,15 +47,23 @@ const HeroAllContent = styled(Box)({
 
 })
 
-const HeroUpperContent = styled(Box)({
+const HeroUpperContent = styled(Box)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between'
-})
+    justifyContent: 'space-between',
+    [theme.breakpoints.down('md')]:{
+        display: 'flex',
+        flexDirection: 'column'
+    }
+}))
 
 const HeroInfoTypography = styled(Box)(({ theme }) => ({
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    [theme.breakpoints.down('md')]:{
+        textAlign: 'center',
+        alignItems: 'center'
+    }
 }))
 
 const GenreText = styled(Typography)(({ theme }) => ({
@@ -66,7 +74,10 @@ const GenreText = styled(Typography)(({ theme }) => ({
 const Title = styled(Typography)(({ theme }) => ({
     fontSize: '45px',
     color: Colors.White,
-    paddingBottom: theme.spacing(2)
+    paddingBottom: theme.spacing(2),
+    [theme.breakpoints.down('md')]:{
+        textAlign: 'center'
+    }
 }))
 
 const HeroDivider = styled(Divider)(({ theme }) => ({
@@ -80,7 +91,10 @@ const Description = styled(Typography)(({ theme }) => ({
     fontSize: '20px',
     fontStyle: 'italic',
     width: '640px',
-    color: Colors.White
+    color: Colors.White,
+    [theme.breakpoints.down("md")]: {
+        fontSize: '17px'
+    }
 }))
 
 const BroadcastingText = styled(Typography)(({ theme }) => ({
@@ -97,9 +111,11 @@ const MembersText = styled(Typography)(({ theme }) => ({
     width: '240px'
 }))
 
-const BlocksImg = styled('img')({
-    
-})
+const BlocksImg = styled('img')(({ theme }) => ({
+    [theme.breakpoints.down('md')]: {
+        display: 'none'
+    }
+}))
 
 const BroadcastingSocials = styled('img')({
     cursor: 'pointer',
@@ -115,13 +131,20 @@ const BroadcastingSocialContainer = styled(Box)(({ theme }) => ({
 }))
 
 const ScrollIndicator = styled('img')(({ theme }) => ({
-    width: '30px'
+    width: '30px',
+    [theme.breakpoints.down('md')]: {
+        marginTop: theme.spacing(2),
+        width: '20px'
+    }
 }))
 
 const ScrollIndicatorBox = styled(Box)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'center',
-    marginTop: theme.spacing(-12)
+    marginTop: theme.spacing(-12),
+    [theme.breakpoints.down('md')]: {
+        marginTop: 'unset',
+    }
 }))
 
 const EventDivider = styled(Divider)(({ theme }) => ({
