@@ -1,5 +1,12 @@
-import BlankPageBtn from '@/common/components/BlankPageBtn';
-import { Colors } from '@/common/constants';
+import 
+    BlankPageBtn 
+from '@/common/components/BlankPageBtn';
+
+
+import { 
+    Colors 
+} from '@/common/constants';
+
 import{
     styled,
     Box,
@@ -24,15 +31,21 @@ import
     Scroll
 from '@/assets/icons/scroll.png'
 
-import { Fragment } from 'react';
+import 
+    HeroEvent 
+from './HeroEvent';
+
+import
+    Youtube
+from '@/assets/icons/youtube.svg'
 
 const HeroInfoContainer = styled(Container)(({ theme }) => ({
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center', /* Center content vertically */
-    minHeight: '80vh', /* Set minimum height of the container to viewport height */
-    position: 'relative',
+
 }))
+
+const HeroAllContent = styled(Box)({
+
+})
 
 const HeroUpperContent = styled(Box)({
     display: 'flex',
@@ -89,7 +102,9 @@ const BlocksImg = styled('img')({
 })
 
 const BroadcastingSocials = styled('img')({
-    cursor: 'pointer'
+    cursor: 'pointer',
+    width: '30px',
+    objectFit: 'contain'
 })
 
 const BroadcastingSocialContainer = styled(Box)(({ theme }) => ({
@@ -109,11 +124,23 @@ const ScrollIndicatorBox = styled(Box)(({ theme }) => ({
     marginTop: theme.spacing(-12)
 }))
 
+const EventDivider = styled(Divider)(({ theme }) => ({
+    width: '91%',
+    borderColor: Colors.Grey,
+    borderWidth: '1px',
+    zIndex: 111,
+    margin: theme.spacing(3, 4)
+}))
+
+const EventsContainer = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'space-evenly'
+}))
 
 
 function HeroInfo(){
     return(
-        <Fragment>
+        <HeroAllContent>
             <HeroInfoContainer>
                 <HeroUpperContent>
                     <HeroInfoTypography>
@@ -146,11 +173,15 @@ function HeroInfo(){
                             btnText={'See More'}
                         />
                         <BroadcastingSocialContainer>
+                            <BroadcastingSocials
+                                src={Youtube}
+                                alt='youtube'
+                            />
                             <BroadcastingSocials 
                                 src={Spotify}
                                 alt='spotify'
                             />
-                            <BroadcastingSocials 
+                            <img 
                                 src={Deezer}
                                 alt='deezzer'
                             />
@@ -166,11 +197,31 @@ function HeroInfo(){
                         alt='scroll-indicator'
                     />
                 </ScrollIndicatorBox>
-                
-                
             </HeroInfoContainer>
             
-        </Fragment>
+            <EventDivider />
+
+            <EventsContainer>
+            
+                <HeroEvent 
+                  label={'VISITING ARTISTS'}
+                  title={'Lorem Gibson Lorem Gibson Lorem'}
+                  setting={'23 FEBRUARY 2019, SATURDAY'}
+                />
+
+                <HeroEvent 
+                  label={'VISITING ARTISTS'}
+                  title={'Lorem Gibson Lorem Gibson Lorem'}
+                  setting={'23 FEBRUARY 2019, SATURDAY'}
+                />
+
+                <HeroEvent 
+                  label={'VISITING ARTISTS'}
+                  title={'Lorem Gibson Lorem Gibson Lorem'}
+                  setting={'23 FEBRUARY 2019, SATURDAY'}
+                />
+            </EventsContainer>
+        </HeroAllContent>
     )
 }
 
