@@ -4,5 +4,6 @@ export const Colors = {
     Grey: '#676767',
     Black: '#111111',
     White: '#FFFFFF',
-    LightGrey: '#EBECF0'
+    LightGrey: '#EBECF0',
+    OpacWhite: 'rgba(255, 255, 255, 0.6)'
 }

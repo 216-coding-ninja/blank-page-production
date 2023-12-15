@@ -30,7 +30,11 @@ import {
 
 import 
     ArrowLeft
-from '@/assets/icons/arrowLeft.png'
+from '@/assets/icons/arrowLeft.png';
+
+import 
+    ArrowRight
+from '@/assets/icons/arrowRight.png';
 
 import HeroInfo from './HeroDetails/HeroInfo';
 
@@ -145,7 +149,7 @@ function Hero(){
                 >
                     <SlideButtonImg 
                         alt='arrow'
-                        src={ArrowLeft}
+                        src={ArrowRight}
                     />
                 </SlideButtonBoxRight>
 

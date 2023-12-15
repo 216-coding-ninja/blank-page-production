@@ -99,14 +99,14 @@ const Description = styled(Typography)(({ theme }) => ({
 
 const BroadcastingText = styled(Typography)(({ theme }) => ({
     fontSize: '15px',
-    color: Colors.Grey,
+    color: Colors.OpacWhite,
     paddingBlock: theme.spacing(2),
     width: '200px'
 }))
 
 const MembersText = styled(Typography)(({ theme }) => ({
     fontSize: '15px',
-    color: Colors.Grey,
+    color: Colors.OpacWhite,
     paddingBlock: theme.spacing(2),
     width: '240px'
 }))
@@ -229,19 +229,19 @@ function HeroInfo(){
                 <HeroEvent 
                   label={'VISITING ARTISTS'}
                   title={'Lorem Gibson Lorem Gibson Lorem'}
-                  setting={'23 FEBRUARY 2019, SATURDAY'}
+                  setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
                 />
 
                 <HeroEvent 
                   label={'VISITING ARTISTS'}
                   title={'Lorem Gibson Lorem Gibson Lorem'}
-                  setting={'23 FEBRUARY 2019, SATURDAY'}
+                  setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
                 />
 
                 <HeroEvent 
                   label={'VISITING ARTISTS'}
                   title={'Lorem Gibson Lorem Gibson Lorem'}
-                  setting={'23 FEBRUARY 2019, SATURDAY'}
+                  setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
                 />
             </EventsContainer>
         </HeroAllContent>
