@@ -15,17 +15,16 @@ import {
 
 import
     AboutMissionText
-from '@/assets/images/about_mission.png'
+from '@/assets/images/about_mission.png';
 
 const AboutContainer = styled(Box)(({ theme }) => ({
-    paddingBlock: theme.spacing(3),
-    display: 'flex',
-    justifyContent: 'center'
+    backgroundColor: Colors.DarkGrey
 }))
 
-const AboutContent = styled(Container)({
-
-})
+const AboutContent = styled(Container)(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'center',
+}))
 
 const AboutContainerDetails = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -46,12 +45,11 @@ const AboutMission = styled('img')(({ theme }) => ({
     zIndex: 200,
     width: '200px',
     objectFit: 'contain',
-   
 }))
 
 const AboutTitle = styled(Typography)(({ theme }) => ({
     fontSize: '17px',
-    color: Colors.Black,
+    color: Colors.White,
     fontWeight: '600',
     letterSpacing: 2,
     alignSelf: 'flex-end',
@@ -70,7 +68,7 @@ const AboutTitle = styled(Typography)(({ theme }) => ({
 
 const IntroductionTitle = styled(Typography)(({ theme }) => ({
     fontSize: '19px',
-    color: Colors.Black,
+    color: Colors.White,
     fontWeight: '600',
     paddingBottom: theme.spacing(3)
 }))
@@ -81,15 +79,14 @@ const AboutTitleContainer = styled(Box)(({ theme }) => ({
 
 const AboutDescription = styled(Typography)(({ theme }) => ({
     fontSize: '14px',
-    width: '550px'
+    width: '590px',
+    color: Colors.White
 }))
-
-
 
 function About(){
     return(
-        <AboutContent>
-            <AboutContainer>
+        <AboutContainer>
+            <AboutContent>
                 <AboutImg 
                     alt='about-img'
                     src={AboutImage}
@@ -113,8 +110,8 @@ function About(){
                         canvas where stories of grit, guts, and transcendence come to life.
                     </AboutDescription>
                 </AboutContainerDetails>
-            </AboutContainer>
-        </AboutContent>
+            </AboutContent>
+        </AboutContainer>
     );
 }
 

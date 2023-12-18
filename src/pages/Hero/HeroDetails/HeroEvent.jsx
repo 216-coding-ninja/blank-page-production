@@ -53,7 +53,6 @@ function HeroEvent({label, title, setting}){
             </SettingTitle>
         </EventBox>
     )
-
 }
 
 export default HeroEvent;
