@@ -157,7 +157,11 @@ const EventDivider = styled(Divider)(({ theme }) => ({
 
 const EventsContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-evenly',
+    [theme.breakpoints.down('md')]:{
+        flexDirection: 'column',
+        alignItems: 'center'
+    }
 }))
 
 

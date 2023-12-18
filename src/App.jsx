@@ -4,7 +4,8 @@ import Hero from "./pages/Hero/Hero"
 
 import { createTheme, CssBaseline, ThemeProvider, styled } from "@mui/material";
 import { typography } from "./common/theme/typography";
-import { Fragment } from "react";
+
+import About from "./pages/About/About";
 
 const theme = createTheme({
   typography: typography()
@@ -16,8 +17,9 @@ function App() {
     <ThemeProvider
      theme={theme}
     >
-        <NavigationBar />
-        <Hero />
+      <NavigationBar />
+      <Hero />
+      <About />
       
     </ThemeProvider>
    
