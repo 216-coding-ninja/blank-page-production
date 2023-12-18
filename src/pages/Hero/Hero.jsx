@@ -39,12 +39,18 @@ from '@/assets/icons/arrowRight.png';
 import HeroInfo from './HeroDetails/HeroInfo';
 
 
-const SlideContainer = styled(Box)({
+const SlideContainer = styled(Box)(({ theme }) => ({
     position: "relative",
     width: '100%',
-    height: '800px',
-    overflow: 'hidden'
-})
+    minHeight: '800px',
+    overflow: 'hidden',
+    [theme.breakpoints.down('md')]:{
+        height: '990px'
+    },
+    [theme.breakpoints.down('sm')]:{
+        height: '1280px'
+    }
+}))
 
 const Slide = styled('div')(({ isActive, imageUrl, theme }) => ({
     width: '100%',

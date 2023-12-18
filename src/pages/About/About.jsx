@@ -24,6 +24,10 @@ const AboutContainer = styled(Box)(({ theme }) => ({
 const AboutContent = styled(Container)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'center',
+    alignItems: 'center',
+    [theme.breakpoints.down('md')] : {
+        flexDirection: 'column'
+    }
 }))
 
 const AboutContainerDetails = styled(Box)(({ theme }) => ({
@@ -31,14 +35,19 @@ const AboutContainerDetails = styled(Box)(({ theme }) => ({
     flexDirection: 'column',
     width: '54%',
     paddingBlock: theme.spacing(6),
-    marginLeft: theme.spacing(6)
+    marginLeft: theme.spacing(6),
+    [theme.breakpoints.down('md')]:{
+        marginLeft: 'unset'
+    }
 }))
 
 const AboutImg = styled('img')(({ theme }) => ({
-    marginTop: theme.spacing(-5),
+    marginTop: theme.spacing(-10),
     zIndex: 1,
-    width: '40%',
-    position: 'relative'
+    width: '400px',
+    [theme.breakpoints.down('md')] : {
+        marginTop: theme.spacing(-2)
+    }
 }));
 
 const AboutMission = styled('img')(({ theme }) => ({
@@ -51,7 +60,7 @@ const AboutTitle = styled(Typography)(({ theme }) => ({
     fontSize: '17px',
     color: Colors.White,
     fontWeight: '600',
-    letterSpacing: 2,
+    letterSpacing: 1,
     alignSelf: 'flex-end',
     paddingBottom: theme.spacing(3),
     position: 'relative',
@@ -63,6 +72,9 @@ const AboutTitle = styled(Typography)(({ theme }) => ({
         height: '25px',
         width: '5px',
         backgroundColor: Colors.Orange
+    },
+    [theme.breakpoints.down('md')]:{
+        alignSelf: 'center'
     }
 }));
 
@@ -70,7 +82,10 @@ const IntroductionTitle = styled(Typography)(({ theme }) => ({
     fontSize: '19px',
     color: Colors.White,
     fontWeight: '600',
-    paddingBottom: theme.spacing(3)
+    paddingBottom: theme.spacing(3),
+    [theme.breakpoints.down('md')]:{
+        textAlign: 'center'
+    }
 }))
 
 const AboutTitleContainer = styled(Box)(({ theme }) => ({
@@ -79,8 +94,12 @@ const AboutTitleContainer = styled(Box)(({ theme }) => ({
 
 const AboutDescription = styled(Typography)(({ theme }) => ({
     fontSize: '14px',
-    width: '590px',
-    color: Colors.White
+    maxWidth: '590px',
+    color: Colors.White,
+    [theme.breakpoints.down('md')]:{
+        maxWidth: '670px',
+        textAlign: 'center'
+    }
 }))
 
 function About(){

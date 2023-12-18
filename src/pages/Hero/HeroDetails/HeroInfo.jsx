@@ -12,7 +12,8 @@ import{
     Box,
     Container,
     Typography,
-    Divider
+    Divider,
+    Grid
 }from '@mui/material';
 
 import
@@ -76,7 +77,8 @@ const Title = styled(Typography)(({ theme }) => ({
     color: Colors.White,
     paddingBottom: theme.spacing(2),
     [theme.breakpoints.down('md')]:{
-        textAlign: 'center'
+        textAlign: 'center',
+        fontSize: '36px'
     }
 }))
 
@@ -93,7 +95,8 @@ const Description = styled(Typography)(({ theme }) => ({
     width: '640px',
     color: Colors.White,
     [theme.breakpoints.down("md")]: {
-        fontSize: '17px'
+        fontSize: '17px',
+        width: '100%'
     }
 }))
 
@@ -154,14 +157,9 @@ const EventDivider = styled(Divider)(({ theme }) => ({
     zIndex: 111,
     margin: theme.spacing(3, 4)
 }))
+const EventsContainer = styled(Container)(({ theme }) => ({
+   
 
-const EventsContainer = styled(Box)(({ theme }) => ({
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    [theme.breakpoints.down('md')]:{
-        flexDirection: 'column',
-        alignItems: 'center'
-    }
 }))
 
 
@@ -228,26 +226,38 @@ function HeroInfo(){
             
             <EventDivider />
 
-            <EventsContainer>
-            
-                <HeroEvent 
-                  label={'VISITING ARTISTS'}
-                  title={'Lorem Gibson Lorem Gibson Lorem'}
-                  setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
-                />
-
-                <HeroEvent 
-                  label={'VISITING ARTISTS'}
-                  title={'Lorem Gibson Lorem Gibson Lorem'}
-                  setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
-                />
-
-                <HeroEvent 
-                  label={'VISITING ARTISTS'}
-                  title={'Lorem Gibson Lorem Gibson Lorem'}
-                  setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
-                />
-            </EventsContainer>
+            <Container>
+                <Grid container spacing={3}>
+                    <Grid item xs={12} sm={6} md={3}>  
+                        <HeroEvent 
+                        label={'VISITING ARTISTS'}
+                        title={'Lorem Gibson Lorem Gibson Lorem'}
+                        setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={3}>
+                        <HeroEvent 
+                        label={'VISITING ARTISTS'}
+                        title={'Lorem Gibson Lorem Gibson Lorem'}
+                        setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={3}>
+                        <HeroEvent 
+                        label={'VISITING ARTISTS'}
+                        title={'Lorem Gibson Lorem Gibson Lorem'}
+                        setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={3}>
+                        <HeroEvent 
+                        label={'VISITING ARTISTS'}
+                        title={'Lorem Gibson Lorem Gibson Lorem'}
+                        setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
+                        />
+                    </Grid>
+                </Grid>
+            </Container>
         </HeroAllContent>
     )
 }

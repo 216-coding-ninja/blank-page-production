@@ -34,7 +34,7 @@ const Title = styled(Typography)({
 const SettingTitle = styled(Typography)({
     color: Colors.OpacWhite,
     fontSize: '14px',
-    width: '240px'
+    maxWidth: '240px'
 })
 
 function HeroEvent({label, title, setting}){
