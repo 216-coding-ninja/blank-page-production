@@ -7,15 +7,21 @@ import {
 } from "@mui/material";
 import BlockPattern from "../components/BlockPattern";
 
-const SAFAContainer = styled(Box)({
+const SAFAContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
-    flexDirection: 'column'
-})
+    flexDirection: 'column',
+    [theme.breakpoints.down(800)]: {
+        alignItems: 'center'
+    }
+}))
 
 const EventName = styled(Typography)(({ theme }) => ({
     fontSize: '16px',
     color: Colors.OpacWhite,
-    paddingBottom: theme.spacing(1.5)
+    paddingBottom: theme.spacing(1.5),
+    [theme.breakpoints.down(900)]:{
+        textAlign: 'center'
+    }
 }));
 
 const SAFATitle = styled(Typography)(({ theme }) => ({
@@ -23,7 +29,17 @@ const SAFATitle = styled(Typography)(({ theme }) => ({
     color: Colors.White,
     fontWeight: '600',
     width: '640px',
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
+    [theme.breakpoints.down(1145)]: {
+        fontSize: '30px',
+        maxWidth: '800px'
+    },
+    [theme.breakpoints.down(1096)]: {
+        maxWidth: '600px'
+    },
+    [theme.breakpoints.down(900)]:{
+        textAlign: 'center'
+    }
 }))
 
 const HeroDivider = styled(Divider)(({ theme }) => ({
@@ -33,12 +49,15 @@ const HeroDivider = styled(Divider)(({ theme }) => ({
     marginBottom: theme.spacing(3)
 }));
 
-const SAFADetailInfo = styled(Typography)({
+const SAFADetailInfo = styled(Typography)(({ theme }) => ({
     fontSize: '18px',
     color: Colors.White,
     fontWeight: '200',
-    maxWidth: '660px'
-})
+    maxWidth: '660px',
+    [theme.breakpoints.down(900)]:{
+        textAlign: 'center'
+    }
+}))
 
 function SAFA(){
     return (

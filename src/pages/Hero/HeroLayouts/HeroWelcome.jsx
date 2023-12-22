@@ -23,6 +23,9 @@ const WelcomeTitle = styled(Typography)(({ theme }) => ({
     },
     [theme.breakpoints.down(1000)]: {
         maxWidth: '680px'
+    },
+    [theme.breakpoints.down(700)]: {
+        fontSize: '25px'
     }
 }))
 
@@ -39,15 +42,6 @@ const HeroDivider = styled(Divider)(({ theme }) => ({
     borderWidth: '1px',
     borderColor: Colors.White,
     marginBottom: theme.spacing(3),
-    // [theme.breakpoints.down(1220)] : {
-    //     width: '800px'
-    // },
-    // [theme.breakpoints.down(1000)]: {
-    //     width: '680px'
-    // },
-    // [theme.breakpoints.down(900)] : {
-    //     width: '500px'
-    // }
 }))
 
 const HeroDetailInfo = styled(Typography)(({ theme }) => ({
@@ -56,6 +50,10 @@ const HeroDetailInfo = styled(Typography)(({ theme }) => ({
     fontWeight: '200',
     [theme.breakpoints.down(900)]:{
         maxWidth: '500px'
+    },
+    [theme.breakpoints.down(700)]: {
+        fontSize: '16px',
+        width: '100%'
     }
 }))
 

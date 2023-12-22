@@ -55,19 +55,16 @@ const HeroDivider = styled(Divider)(({ theme }) => ({
     borderWidth: '1px',
     borderColor: Colors.White,
     marginBottom: theme.spacing(3),
-    // [theme.breakpoints.down(1145)]:{
-    //     width: '800px'
-    // },
-    // [theme.breakpoints.down(1096)]: {
-    //     width: '600px'
-    // }
 }));
 
 const WorldCupDetailInfo = styled(Typography)({
     fontSize: '18px',
     color: Colors.White,
     fontWeight: '200',
-    maxWidth: '851px'
+    maxWidth: '851px',
+    [theme.breakpoints.down(900)]:{
+        textAlign: 'center'
+    }
 })
 
 const UnderlineText = styled(Typography)(({ theme }) => ({

@@ -164,7 +164,13 @@ function NavigationBar(){
                     </ContactInformation>
 
                     <SocialInformation>
-                        <SocialImg src={Instagram} alt='instagram'/>
+                        <a 
+                         href='https://www.instagram.com/blankpage_productions/'
+                         target="_blank"
+                        >
+                            <SocialImg src={Instagram} alt='instagram'/>
+                        </a>
+                     
                         <ContactText>blankpage_productions</ContactText>
                     </SocialInformation>
                 </BlankPageContact>

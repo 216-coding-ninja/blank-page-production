@@ -84,10 +84,7 @@ function NavigationMenu(){
 
             <NavLinkBox>
                 <NavLink>HOME</NavLink>
-                <NavLink>ABOUT US</NavLink>
-                <NavLink>NEWS</NavLink>
-                <NavLink>CONTACT</NavLink>
-                
+                <NavLink>ABOUT US</NavLink>   
             </NavLinkBox>
             
         </NavigationMenuContainer>
