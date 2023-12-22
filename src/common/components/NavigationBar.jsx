@@ -52,7 +52,7 @@ const BlankPageLogoBox = styled(Box)(({ theme }) => ({
     width: '100px',
     height: '80px',
     padding: theme.spacing(1, 7),
-    backgroundColor: Colors.Orange
+    backgroundColor: Colors.Black
 }))
 
 const BlankPageContact = styled(Box)(({ theme }) => ({
@@ -85,7 +85,7 @@ const ContactText = styled(Typography)({
 
 const ContactInformation = styled(Box)(({ theme }) => ({
     display: 'flex',
-    gap: theme.spacing(2),
+    gap: theme.spacing(6),
     [theme.breakpoints.down('md')]:{
         display: 'none',
     }
@@ -157,14 +157,12 @@ function NavigationBar(){
                                 info@blankpageproduction.co.za
                             </ContactText>
                         </ContactInformationBox>
-                    </ContactInformation>
 
-                    <SocialInformation>
-                        <SocialImg src={FaceBook} alt='facebook'/>
-                        <SocialImg src={YouTube} alt='youTube'/>
-                        <SocialImg src={Google} alt='google'/>
-                        <SocialImg src={Instagram} alt='instagram'/>
-                    </SocialInformation>
+                        <ContactInformationBox>
+                            <SocialImg src={Instagram} alt='instagram'/>
+                            <ContactText>blankpage_productions</ContactText>
+                        </ContactInformationBox>
+                    </ContactInformation>
                 </BlankPageContact>
                 <BlankPageNavigationBox>
                     <NavigationMenu />

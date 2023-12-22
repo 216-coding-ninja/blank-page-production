@@ -163,7 +163,7 @@ const EventsContainer = styled(Container)(({ theme }) => ({
 }))
 
 
-function HeroInfo(){
+function HeroInfo({}){
     return(
         <HeroAllContent>
             <HeroInfoContainer>
@@ -197,21 +197,7 @@ function HeroInfo(){
                         <BlankPageBtn 
                             btnText={'See More'}
                         />
-                        <BroadcastingSocialContainer>
-                            <BroadcastingSocials
-                                src={Youtube}
-                                alt='youtube'
-                            />
-                            <BroadcastingSocials 
-                                src={Spotify}
-                                alt='spotify'
-                            />
-                            <img 
-                                src={Deezer}
-                                alt='deezzer'
-                            />
                         
-                        </BroadcastingSocialContainer>
                     </HeroInfoTypography>
                     <BlocksImg src={Block} alt='blocks illustration'/>
                 </HeroUpperContent>
@@ -226,38 +212,6 @@ function HeroInfo(){
             
             <EventDivider />
 
-            <Container>
-                <Grid container spacing={3}>
-                    <Grid item xs={12} sm={6} md={3}>  
-                        <HeroEvent 
-                        label={'VISITING ARTISTS'}
-                        title={'Lorem Gibson Lorem Gibson Lorem'}
-                        setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <HeroEvent 
-                        label={'VISITING ARTISTS'}
-                        title={'Lorem Gibson Lorem Gibson Lorem'}
-                        setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <HeroEvent 
-                        label={'VISITING ARTISTS'}
-                        title={'Lorem Gibson Lorem Gibson Lorem'}
-                        setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <HeroEvent 
-                        label={'VISITING ARTISTS'}
-                        title={'Lorem Gibson Lorem Gibson Lorem'}
-                        setting={'23 FEBRUARY 2019, SATURDAY 7:30PM, Royal Festive Hall, Moscow'}
-                        />
-                    </Grid>
-                </Grid>
-            </Container>
         </HeroAllContent>
     )
 }

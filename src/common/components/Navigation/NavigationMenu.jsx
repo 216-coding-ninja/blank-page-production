@@ -64,7 +64,7 @@ const NavLinkBox = styled(Box)(({ theme }) => ({
 
 const NavLink = styled(Typography)(({ theme }) => ({
     color: Colors.Black,
-    fontSize: '14px',
+    fontSize: '13px',
     cursor: 'pointer',
     gap: theme.spacing(3),
     '&:hover': {
@@ -84,10 +84,10 @@ function NavigationMenu(){
 
             <NavLinkBox>
                 <NavLink>HOME</NavLink>
-                <NavLink>SHOP</NavLink>
-                <NavLink>ABOUT</NavLink>
+                <NavLink>ABOUT US</NavLink>
+                <NavLink>NEWS</NavLink>
                 <NavLink>CONTACT</NavLink>
-                <NavLink>FAQ</NavLink>
+                
             </NavLinkBox>
             
         </NavigationMenuContainer>
