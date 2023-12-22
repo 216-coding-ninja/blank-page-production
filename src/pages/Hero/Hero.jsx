@@ -43,10 +43,22 @@ from './HeroDetails/HeroInfo';
 
 import 
     FootBallVid
-from '@/assets/video/Football-motio.mp4'
-import HeroWelcome from './HeroLayouts/HeroWelcome';
-import SAFA from './HeroLayouts/SAFA';
+from '@/assets/video/football-animation.mp4';
+
+import 
+    HeroWelcome 
+from './HeroLayouts/HeroWelcome';
+
+import 
+    SAFA 
+from './HeroLayouts/SAFA';
+
+import
+    FootballStadium
+from '@/assets/video/footage-stadium-night.mp4'
+
 import WorldCup from './HeroLayouts/WorldCup';
+
 
 
 const SlideContainer = styled(Box)(({ theme }) => ({
@@ -56,7 +68,7 @@ const SlideContainer = styled(Box)(({ theme }) => ({
     overflow: 'hidden',
 }))
 
-const Slide = styled('div')(({ isActive, imageUrl, theme }) => ({
+const Slide = styled('div')(({ isActive }) => ({
     width: '100%',
     height: '100%',
     position: 'absolute',
@@ -119,23 +131,11 @@ const Overlay = styled('div')(({ theme }) => ({
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)', 
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
     zIndex: 5, 
 }));
 
-const HeroInfoStyled = styled(HeroInfo)({
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center', 
-    zIndex: 9,
-});
-
-const HeroDetails = styled(Box)(({ index }) => ({
+const HeroDetails = styled(Box)(({ index, theme }) => ({
     position: 'absolute',
     top: 0,
     left: 0,
@@ -144,8 +144,11 @@ const HeroDetails = styled(Box)(({ index }) => ({
     zIndex: 5,
     display: 'flex',
     justifyContent: index === 0 ? 'center' : '',
-    alignItems: index === 0 ? 'center' : '',
-    paddingBlock: index === 0 ? '' :'100px'
+    alignItems: 'center', 
+    paddingBlock: index !== 0 ? '70px' :'80px',
+    [theme.breakpoints.down(900)]:{
+        justifyContent: index === 0 ? 'center' : 'center'
+    }
 }))
 
 
@@ -188,8 +191,8 @@ function Hero(){
             url: Bafana 
        },
        {
-            type: 'image',
-            url: BafanaAfcon 
+            type: 'video',
+            url: FootballStadium
        }
     ];
 
@@ -243,7 +246,6 @@ function Hero(){
                             
                         </HeroDetails>
                         
-                        <HeroInfoStyled />
                     </Slide>
                 ))}
 

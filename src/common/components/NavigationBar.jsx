@@ -85,16 +85,16 @@ const ContactText = styled(Typography)({
 
 const ContactInformation = styled(Box)(({ theme }) => ({
     display: 'flex',
-    gap: theme.spacing(6),
-    [theme.breakpoints.down('md')]:{
-        display: 'none',
-    }
+    gap: theme.spacing(6)
 }))
 
 const ContactInformationBox = styled(Box)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
-    gap: theme.spacing(1)
+    gap: theme.spacing(1),
+    [theme.breakpoints.down(815)] : {
+        display: 'none'
+    }
 }))
 
 const SocialImg = styled('img')({
@@ -105,7 +105,7 @@ const SocialImg = styled('img')({
 const SocialInformation = styled(Box)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
-    gap: theme.spacing(3),
+    gap: theme.spacing(1),
 }))
 
 const BlankPageNavigationBox = styled(Box)(({ theme }) => ({
@@ -159,10 +159,14 @@ function NavigationBar(){
                         </ContactInformationBox>
 
                         <ContactInformationBox>
-                            <SocialImg src={Instagram} alt='instagram'/>
-                            <ContactText>blankpage_productions</ContactText>
+                            
                         </ContactInformationBox>
                     </ContactInformation>
+
+                    <SocialInformation>
+                        <SocialImg src={Instagram} alt='instagram'/>
+                        <ContactText>blankpage_productions</ContactText>
+                    </SocialInformation>
                 </BlankPageContact>
                 <BlankPageNavigationBox>
                     <NavigationMenu />
