@@ -49,10 +49,10 @@ const NavigationContainer = styled(Box)({
 })
 
 const BlankPageLogoBox = styled(Box)(({ theme }) => ({
-    width: '100px',
-    height: '80px',
+    width: '75px',
+    height: '55px',
     padding: theme.spacing(1, 7),
-    backgroundColor: Colors.Black
+    backgroundColor: Colors.DarkGrey
 }))
 
 const BlankPageContact = styled(Box)(({ theme }) => ({
@@ -66,12 +66,13 @@ const BlankPageContact = styled(Box)(({ theme }) => ({
 }))
 
 const NavigationContent = styled(Box)(({ theme }) => ({
-    height: '70px',
-    width: '100%'
+    display: 'flex',
+    width: '100%',
+    backgroundColor: Colors.DarkGrey
 }))
 
-const BlankPageLogoImg = styled('img')({
-    width: '90px'
+export const BlankPageLogoImg = styled('img')({
+    width: '63px'
 })
 
 const ContactImg = styled('img')({
@@ -124,7 +125,7 @@ const BlankPageMenuContainer = styled(Box)(({ theme }) => ({
 }));
 
 const MenuImg = styled('img')({
-    width: '30px'
+    width: '35px'
 });
 
 const InstagramLink = styled('a')({
@@ -141,50 +142,13 @@ function NavigationBar(){
                 />
             </BlankPageLogoBox>
             <NavigationContent>
-                <BlankPageContact>
-                    <ContactInformation>
-                        <ContactInformationBox>
-                            <ContactImg 
-                                src={Telephone} 
-                                alt='telephone'
-                            />
-                            <ContactText>
-                                ( +27 )11 534 8409
-                            </ContactText>
-                        </ContactInformationBox>
-                        <ContactInformationBox>
-                            <ContactImg 
-                                src={EmailAddress} 
-                                alt='telephone'
-                            />
-                            <ContactText>
-                                info@blankpageproduction.co.za
-                            </ContactText>
-                        </ContactInformationBox>
+        
+                <NavigationMenu />
 
-                        <ContactInformationBox>
-                            
-                        </ContactInformationBox>
-                    </ContactInformation>
-
-                    <SocialInformation>
-                        <InstagramLink
-                         href='https://www.instagram.com/blankpage_productions/'
-                         target="_blank"
-                        >
-                            <SocialImg src={Instagram} alt='instagram'/>
-                        </InstagramLink>
-                     
-                        <ContactText>blankpage_productions</ContactText>
-                    </SocialInformation>
-                </BlankPageContact>
-                <BlankPageNavigationBox>
-                    <NavigationMenu />
-
-                    <BlankPageMenuContainer>
-                        <MenuImg src={Menu} alt='menu'/>
-                    </BlankPageMenuContainer>
-                </BlankPageNavigationBox>
+                <BlankPageMenuContainer>
+                    <MenuImg src={Menu} alt='menu'/>
+                </BlankPageMenuContainer>
+                
             </NavigationContent>
         </NavigationContainer>
     )

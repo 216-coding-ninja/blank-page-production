@@ -1,11 +1,21 @@
-import { Colors } from "@/common/constants";
+import { 
+    useState 
+} from "react";
+
 import { 
     styled,
     Box,
     Typography,
-    Divider
+    Divider,
+    Modal
 } from "@mui/material";
+
+
+
 import BlockPattern from "../components/BlockPattern";
+import BlankPageBtn from "@/common/components/BlankPageBtn";
+import { Colors } from "@/common/constants";
+
 
 const SAFAContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -28,7 +38,8 @@ const SAFATitle = styled(Typography)(({ theme }) => ({
     fontSize: '38px',
     color: Colors.White,
     fontWeight: '600',
-    width: '640px',
+    textTransform: 'uppercase',
+    width: '790px',
     marginBottom: theme.spacing(2),
     [theme.breakpoints.down(1145)]: {
         fontSize: '30px',
@@ -46,7 +57,7 @@ const HeroDivider = styled(Divider)(({ theme }) => ({
     width: '100%',
     borderWidth: '1px',
     borderColor: Colors.White,
-    marginBottom: theme.spacing(3)
+    marginBottom: theme.spacing(2)
 }));
 
 const SAFADetailInfo = styled(Typography)(({ theme }) => ({
@@ -58,22 +69,20 @@ const SAFADetailInfo = styled(Typography)(({ theme }) => ({
         textAlign: 'center'
     }
 }))
-
 function SAFA(){
+   
+
     return (
         <SAFAContainer>
-            <EventName>Football</EventName>
-            <EventName>SaFa - 14 Dec 2023</EventName>
             <SAFATitle variant="h5">
-                BROOS ANNOUNCES PRELIMARY BAFANA SQUAD FOR AFCON
+                Banyana Banyana qualify for 2024 Women's Africa Cup of Nations 
             </SAFATitle>
             <HeroDivider />
             <SAFADetailInfo>
-                14 December 2023 – Bafana Bafana 
-                coach Hugo Broos showed his hand when he announced 
-                his preliminary squad for next year’s Africa Cup of Nations in Côte d’Ivoire on Thursday.
+                Desiree Ellis guided her Banyana Banyana side to yet another Women's Africa Cup of Nations tournament and Janine Van Wyk made history.
             </SAFADetailInfo>
             <BlockPattern />
+            
         </SAFAContainer>
     )
 }

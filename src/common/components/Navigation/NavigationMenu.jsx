@@ -5,12 +5,16 @@ import {
 import{
     styled,
     Box,
-    Typography
+    Divider
 }from '@mui/material';
 
 import 
     SearchImg
-from '@/assets/icons/search.png'
+from '@/assets/icons/search.png';
+
+import { 
+    Link 
+} from 'react-router-dom';
 
 const NavigationMenuContainer = styled(Box)({
     display: 'flex',
@@ -62,29 +66,54 @@ const NavLinkBox = styled(Box)(({ theme }) => ({
     }
 }))
 
-const NavLink = styled(Typography)(({ theme }) => ({
-    color: Colors.Black,
+const NavLink = styled(Link)(({ theme }) => ({
+    color: Colors.White,
+    textDecoration: 'none',
     fontSize: '13px',
     cursor: 'pointer',
     gap: theme.spacing(3),
     '&:hover': {
         color: Colors.Orange
-    }
+    },
+    '&.active': { 
+        color: Colors.Orange,
+        fontWeight: 'bold',
+    },
+}));
+
+const NavigationDivider = styled(Divider)(({ theme }) => ({
+    backgroundColor: Colors.White,
+    transform: 'rotate(180deg)',
+    borderWidth: '1px',
+    marginRight: theme.spacing(2)
 }))
+
+const InputContent = styled(Box)({
+    display: 'flex'
+})
 
 function NavigationMenu(){
     return(
         <NavigationMenuContainer>
-            <InputContainer>
-                <SearchInput placeholder='Search...' type='text'/>
-                <IconContainer>
-                    <SearchIcon src={SearchImg} alt='search'/>
-                </IconContainer>
-            </InputContainer>
+            <InputContent>
+                <NavigationDivider />
+                <InputContainer>
+                    <SearchInput 
+                        placeholder='Search...' 
+                        type='text'
+                    />
+                    <IconContainer>
+                        <SearchIcon 
+                            src={SearchImg} 
+                            alt='search'
+                        />
+                    </IconContainer>
+                </InputContainer>
+            </InputContent>
 
             <NavLinkBox>
-                <NavLink>HOME</NavLink>
-                <NavLink>ABOUT US</NavLink>   
+                <NavLink to='/'>HOME</NavLink>
+               {/* <NavLink to='/aboutus'>ABOUT US</NavLink> */}   
             </NavLinkBox>
             
         </NavigationMenuContainer>

@@ -6,12 +6,22 @@ import {
     styled,
     Box,
     Typography,
-    Divider
+    Divider,
+    Modal
 } from "@mui/material";
 
 import 
     BlockPattern 
 from "@/pages/Hero/components/BlockPattern";
+
+import BlankPageBtn from "@/common/components/BlankPageBtn";
+import { useState } from "react";
+
+import CloseIcon from '@mui/icons-material/Close';
+
+import 
+    BafanaSquadList 
+from '@/assets/images/Bafana-squad.webp';
 
 const WorldCupContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -72,22 +82,71 @@ const UnderlineText = styled(Typography)(({ theme }) => ({
     paddingInline: theme.spacing(.5)
 }))
 
+const ModalSquadList = styled(Box)({
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 900,
+    height: 500,
+    backgroundImage: `url(${BafanaSquadList})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: 'contain',
+    outline: 'none'
+})
 
+const SquadModal = styled(Modal)({
+    outline: 'none',
+    '.MuiPaper-root': {
+        border: 'none',
+        boxShadow: 'none',
+        backgroundColor:'transparent'
+    }
+})
+
+const SquadContainer = styled(Box)({
+    outline: 'none',
+})
+
+const Close = styled(CloseIcon)({
+    fontSize: '40px',
+    color: Colors.White,
+    position: 'absolute',
+    top: '-34px',
+    right: '10px',
+    cursor: 'pointer',
+    zIndex: 1,
+})
 function WorldCup(){
+
+    const [open, setOpen] = useState(false);
+
+    const handleOpenSquadList = () => {
+        setOpen(true);
+    }
+
+    const handleCloseSquadList = () => {
+        setOpen(false);
+    }
     return (
         <WorldCupContainer>
-            <EventName>Football</EventName>
-            <EventName>By <UnderlineText>Yanga Sibembe</UnderlineText> - 16 Nov 2023</EventName>
+        
             <WorldCupTitle variant="h5">
-                Bafana Bafana seek perfect start to World Cup qualification campaign
+                hugo broos announces his 23-man bafana bafana squad for afcon COTE D’VOIRE 2023
             </WorldCupTitle>
             <HeroDivider />
-            <WorldCupDetailInfo>
-                Bafana Bafana have become a team that qualifies for major tournaments sporadically. 
-                They need positive results against Benin and Rwanda as they kick off a bid to play in the 
-                Fifa World Cup for the first time since 2010.
-            </WorldCupDetailInfo>
+         
+            <BlankPageBtn btnText={'READ MORE'} onClick={handleOpenSquadList}/>
+            
             <BlockPattern />
+                <SquadModal
+                    open={open}
+                >     
+                    <ModalSquadList>
+                        <Close onClick={handleCloseSquadList}/>  
+                    </ModalSquadList>                
+                </SquadModal>
         </WorldCupContainer>
     )
 }

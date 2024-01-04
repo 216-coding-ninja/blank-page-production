@@ -51,14 +51,19 @@ import
     FootballStadium
 from '@/assets/video/footage-stadium-night.mp4'
 
+import Banyana from '@/assets/images/Banyana_Banyana.webp'
+
 import WorldCup from './HeroLayouts/WorldCup';
+
+import BanyanaItaly from '@/assets/images/south_africa_vs_italy.webp';
+import ContactUs from '../ContactUs/ContactUs';
 
 
 
 const SlideContainer = styled(Box)(({ theme }) => ({
     position: "relative",
     width: '100%',
-    height: 'calc(100vh - 96px)',
+    height: 'calc(100vh - 71px)',
     overflow: 'hidden',
 }))
 
@@ -153,7 +158,7 @@ function Hero(){
     }
 
     useEffect(() => {
-        const transitionDelay = 6000;
+        const transitionDelay = 8000;
         const transitionInterval = setInterval(goToNextSlide, transitionDelay);
 
         return () => clearInterval(transitionInterval)
@@ -195,8 +200,8 @@ function Hero(){
             url: Bafana 
        },
        {
-            type: 'video',
-            url: FootballStadium
+            type: 'image',
+            url: BanyanaItaly
        }
     ];
 
@@ -270,7 +275,8 @@ function Hero(){
                         src={ArrowRight}
                     />
                 </SlideButtonBoxRight>
-            </SlideContainer> 
+            </SlideContainer>
+        
         </Fragment>
         
     )

@@ -84,7 +84,7 @@ const Title = styled(Typography)(({ theme }) => ({
 
 const HeroDivider = styled(Divider)(({ theme }) => ({
     width: '520px',
-    borderWidth: '1px',
+    borderWidth: '0.43px',
     borderColor: Colors.White,
     marginBottom: theme.spacing(3)
 }))

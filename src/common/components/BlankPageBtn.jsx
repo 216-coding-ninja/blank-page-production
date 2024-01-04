@@ -12,15 +12,15 @@ const BlankPageBtnBox = styled(Box)(({ theme }) => ({
     padding: theme.spacing(2, 2),
     color: Colors.White,
     backgroundColor: Colors.Orange,
-    width: '170px',
+    width: '140px',
     textAlign: 'center',
     cursor: 'pointer'
 }))
 
-function BlankPageBtn({ btnText }){
+function BlankPageBtn({ btnText, onClick }){
 
     return(
-        <BlankPageBtnBox>
+        <BlankPageBtnBox onClick={onClick}>
             <Typography>
                 {btnText}   
             </Typography>
