@@ -15,7 +15,7 @@ import
 from "@/pages/Hero/components/BlockPattern";
 
 import BlankPageBtn from "@/common/components/BlankPageBtn";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -118,17 +118,27 @@ const Close = styled(CloseIcon)({
     cursor: 'pointer',
     zIndex: 1,
 })
-function WorldCup(){
+function WorldCup({setIsModalOpen}){
 
     const [open, setOpen] = useState(false);
 
     const handleOpenSquadList = () => {
         setOpen(true);
+        setIsModalOpen(true);
     }
 
     const handleCloseSquadList = () => {
         setOpen(false);
+        setIsModalOpen(false);
     }
+
+    useEffect(() => {
+        if (open) {
+          setIsModalOpen(true);
+        } else {
+          setIsModalOpen(false);
+        }
+    }, [open, setIsModalOpen]);
     return (
         <WorldCupContainer>
         
@@ -136,7 +146,10 @@ function WorldCup(){
                 hugo broos announces his 23-man bafana bafana squad for afcon COTE D’VOIRE 2023
             </WorldCupTitle>
             <HeroDivider />
-         
+
+            {/*<WorldCupDetailInfo>
+                Bafana Bafana are in Group E along with other countries
+            </WorldCupDetailInfo>*/}
             <BlankPageBtn btnText={'READ MORE'} onClick={handleOpenSquadList}/>
             
             <BlockPattern />

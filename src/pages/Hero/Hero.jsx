@@ -152,9 +152,12 @@ const HeroDetails = styled(Box)(({ index, theme }) => ({
 
 function Hero(){
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const goToNextSlide = () => {
-        setCurrentSlide((prevSlide) => (prevSlide === slides.length - 1 ? 0 : prevSlide + 1))
+        if(!isModalOpen){
+            setCurrentSlide((prevSlide) => (prevSlide === slides.length - 1 ? 0 : prevSlide + 1))
+        }
     }
 
     useEffect(() => {
@@ -162,7 +165,7 @@ function Hero(){
         const transitionInterval = setInterval(goToNextSlide, transitionDelay);
 
         return () => clearInterval(transitionInterval)
-    },[currentSlide])
+    },[currentSlide, isModalOpen])
 
     const getLayoutRender = (currentIndex) => {
         let renderedLayout = null;
@@ -172,7 +175,7 @@ function Hero(){
            
             case 'leftElements':
                 renderedLayout = (
-                    <WorldCup />
+                    <WorldCup setIsModalOpen={setIsModalOpen} />
                 );
                 break;
             case 'leftBottomElements':
