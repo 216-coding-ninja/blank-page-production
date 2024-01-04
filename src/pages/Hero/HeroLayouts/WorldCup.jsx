@@ -57,7 +57,7 @@ const HeroDivider = styled(Divider)(({ theme }) => ({
     marginBottom: theme.spacing(3),
 }));
 
-const WorldCupDetailInfo = styled(Typography)({
+const WorldCupDetailInfo = styled(Typography)(({ theme }) => ({
     fontSize: '18px',
     color: Colors.White,
     fontWeight: '200',
@@ -65,7 +65,7 @@ const WorldCupDetailInfo = styled(Typography)({
     [theme.breakpoints.down(900)]:{
         textAlign: 'center'
     }
-})
+}))
 
 const UnderlineText = styled(Typography)(({ theme }) => ({
     textDecorationLine: 'underline',

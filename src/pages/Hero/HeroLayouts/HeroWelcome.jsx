@@ -11,6 +11,10 @@ import{
 
 import BlockPattern from '@/pages/Hero/components/BlockPattern';
 
+import
+    Scroll
+from '@/assets/icons/scroll.png'
+
 
 const WelcomeTitle = styled(Typography)(({ theme }) => ({
     fontSize: '45px',
@@ -57,6 +61,11 @@ const HeroDetailInfo = styled(Typography)(({ theme }) => ({
     }
 }))
 
+const HeroTitleContainer = styled(Box)({
+    display: 'flex',
+    
+})
+
 function HeroWelcome(){
     return(
         <WelcomeContainer>
@@ -64,10 +73,15 @@ function HeroWelcome(){
                 WE TELL SPORTS STORIES LIKE NO OTHER!
             </WelcomeTitle>
             <HeroDivider />
-            <HeroDetailInfo>
-                Capturing the heart and soul of sports through the art of storytelling. We refine 
-                sports storytelling, going beyond the victories to capture the essence of athletes' lives
-            </HeroDetailInfo>
+
+            <HeroTitleContainer>
+                
+                <HeroDetailInfo>
+                    Capturing the heart and soul of sports through the art of storytelling. We refine 
+                    sports storytelling, going beyond the victories to capture the essence of athletes' lives
+                </HeroDetailInfo>
+            </HeroTitleContainer>
+            
             <BlockPattern />
         </WelcomeContainer>
     )

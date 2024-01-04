@@ -125,6 +125,10 @@ const BlankPageMenuContainer = styled(Box)(({ theme }) => ({
 
 const MenuImg = styled('img')({
     width: '30px'
+});
+
+const InstagramLink = styled('a')({
+    marginTop: '3px'
 })
 
 function NavigationBar(){
@@ -145,7 +149,7 @@ function NavigationBar(){
                                 alt='telephone'
                             />
                             <ContactText>
-                                011 534 8409
+                                ( +27 )11 534 8409
                             </ContactText>
                         </ContactInformationBox>
                         <ContactInformationBox>
@@ -164,12 +168,12 @@ function NavigationBar(){
                     </ContactInformation>
 
                     <SocialInformation>
-                        <a 
+                        <InstagramLink
                          href='https://www.instagram.com/blankpage_productions/'
                          target="_blank"
                         >
                             <SocialImg src={Instagram} alt='instagram'/>
-                        </a>
+                        </InstagramLink>
                      
                         <ContactText>blankpage_productions</ContactText>
                     </SocialInformation>

@@ -6,17 +6,11 @@ import {
 } from 'react';
 
 
-import
-    BafanaAfcon
-from '@/assets/images/bafana-afcon.png';
 
 import
     Bafana
 from '@/assets/images/bafana-bafana.png';
 
-import
-    SportPerson
-from '@/assets/images/sport-person.png'
 
 import{
     styled,
@@ -144,16 +138,26 @@ const HeroDetails = styled(Box)(({ index, theme }) => ({
     zIndex: 5,
     display: 'flex',
     justifyContent: index === 0 ? 'center' : '',
-    alignItems: 'center', 
+    alignItems: 'center',
     paddingBlock: index !== 0 ? '70px' :'80px',
     [theme.breakpoints.down(900)]:{
         justifyContent: index === 0 ? 'center' : 'center'
     }
 }))
 
-
 function Hero(){
     const [currentSlide, setCurrentSlide] = useState(0);
+
+    const goToNextSlide = () => {
+        setCurrentSlide((prevSlide) => (prevSlide === slides.length - 1 ? 0 : prevSlide + 1))
+    }
+
+    useEffect(() => {
+        const transitionDelay = 6000;
+        const transitionInterval = setInterval(goToNextSlide, transitionDelay);
+
+        return () => clearInterval(transitionInterval)
+    },[currentSlide])
 
     const getLayoutRender = (currentIndex) => {
         let renderedLayout = null;
@@ -266,7 +270,7 @@ function Hero(){
                         src={ArrowRight}
                     />
                 </SlideButtonBoxRight>
-            </SlideContainer>            
+            </SlideContainer> 
         </Fragment>
         
     )

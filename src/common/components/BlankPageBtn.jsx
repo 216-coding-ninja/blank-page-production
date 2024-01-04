@@ -3,7 +3,10 @@ import{
     Box,
     Typography
 }from '@mui/material';
-import { Colors } from '@/common/constants';
+
+import { 
+    Colors
+} from '@/common/constants';
 
 const BlankPageBtnBox = styled(Box)(({ theme }) => ({
     padding: theme.spacing(2, 2),
