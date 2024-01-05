@@ -5,7 +5,8 @@ import {
 import{
     styled,
     Box,
-    Divider
+    Divider,
+    Typography
 }from '@mui/material';
 
 import 
@@ -70,6 +71,7 @@ const NavLink = styled(Link)(({ theme }) => ({
     color: Colors.White,
     textDecoration: 'none',
     fontSize: '13px',
+    fontFamily: '',
     cursor: 'pointer',
     gap: theme.spacing(3),
     '&:hover': {
@@ -80,6 +82,10 @@ const NavLink = styled(Link)(({ theme }) => ({
         fontWeight: 'bold',
     },
 }));
+
+const TypographyLink = styled(Typography)({
+    fontSize: '15px'
+})
 
 const NavigationDivider = styled(Divider)(({ theme }) => ({
     backgroundColor: Colors.White,
@@ -112,7 +118,11 @@ function NavigationMenu(){
             </InputContent>
 
             <NavLinkBox>
-                <NavLink to='/'>HOME</NavLink>
+                <NavLink to='/'>
+                    <TypographyLink>
+                        HOME
+                    </TypographyLink>
+                </NavLink>
                {/* <NavLink to='/aboutus'>ABOUT US</NavLink> */}   
             </NavLinkBox>
             

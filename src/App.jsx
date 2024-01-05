@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 import { Fragment } from "react";
 import ContactUs from "./pages/ContactUs/ContactUs";
+import { Helmet } from "react-helmet-async";
 
 const theme = createTheme({
   typography: typography()
@@ -29,16 +30,27 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route 
-            index 
+            path='/'
             element={
               <Fragment>
+                <Helmet>
+                  <title>Home</title>
+                  <meta 
+                    name="description"
+                    content="Capturing the heart and soul of sports through the art of storytelling."
+                  />
+                  <link 
+                    rel="canonical" 
+                    href="https://blankpageproductions.co.za/" 
+                  />
+                </Helmet>
                 <NavigationBar />
                 <Hero />
                 <ContactUs />
               </Fragment>
             }
           />
-          <Route 
+          {/*<Route 
             path='/aboutus' 
             element={
               <Fragment>
@@ -46,7 +58,7 @@ function App() {
                 <About /> 
               </Fragment> 
             }
-          />
+          /> */}
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
