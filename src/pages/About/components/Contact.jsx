@@ -1,6 +1,7 @@
 
 import { 
     Box, 
+    TextField, 
     Typography, 
     styled 
 } from "@mui/material";
@@ -12,11 +13,16 @@ import {
 import Email from '@/assets/icons/email.png';
 
 import Instagram from '@/assets/icons/instagram.png'
+import BlankPageBtn from "@/common/components/BlankPageBtn";
+import GoogleMap from "./GoogleMap";
+import DarkMap from "./GoogleMap";
 
 const ContactContainer = styled(Box)(({ theme }) => ({
     backgroundColor: Colors.Charcoal,
     padding: theme.spacing(4, 3),
-    display: 'flex'
+    display: 'flex',
+    gap: theme.spacing(4),
+    zIndex: 2
 }))
 
 const ContactTitle = styled(Typography)(({ theme }) => ({
@@ -56,6 +62,36 @@ const SocialText = styled(Typography)({
     fontSize: '12px'
 })
 
+const ContactForm = styled('form')(({ theme }) => ({
+    marginTop: theme.spacing(3),
+    display: 'flex',
+    flexDirection: 'column'
+}))
+
+const CustomTextField = styled(TextField)(({ theme }) => ({
+    width: '400px',
+    marginBottom: theme.spacing(2.5),
+    '& .MuiInputBase-input': {
+      color: Colors.White,
+      paddingBlock: theme.spacing(1.5)
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: Colors.White,
+      },
+      '&:hover fieldset': {
+        borderColor: Colors.Orange,
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: Colors.Orange,
+      },
+    },
+    '& .MuiInputLabel-root.Mui-focused': {
+      color: Colors.Orange,
+    },
+  }));
+  
+
 function Contact(){
     return(
         <ContactContainer>
@@ -79,8 +115,31 @@ function Contact(){
                     <SocialText>blankpage_productions</SocialText>
                 </SocialContainer>
                 
+                <ContactForm>
+                    <CustomTextField 
+                        placeholder="Your name & surname"
+                        type="text"
+                    />
+
+                    <CustomTextField 
+                        placeholder="Your email address"
+                        type="email"
+                    />
+
+                    <CustomTextField 
+                        placeholder="Write your message here"
+                        type="text"
+                    />
+
+                    <BlankPageBtn 
+                        btnText={'Send Message'}
+                    />
+                    
+                </ContactForm>
                 
             </ContactText>
+
+            <DarkMap />
         </ContactContainer>
     )
 }

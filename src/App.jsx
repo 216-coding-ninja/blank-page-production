@@ -50,15 +50,16 @@ function App() {
               </Fragment>
             }
           />
-          {/*<Route 
+          <Route 
             path='/aboutus' 
             element={
               <Fragment>
                 <NavigationBar />
-                <About /> 
+                <About />
+                <ContactUs />
               </Fragment> 
             }
-          /> */}
+          /> 
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
