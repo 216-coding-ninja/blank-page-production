@@ -17,7 +17,7 @@ from '@/assets/images/soccer-field.png';
 
 import 
     Block 
-from '@/assets/icons/Block.png';
+from '@/assets/icons/block.png';
 
 import 
     Scroll 
