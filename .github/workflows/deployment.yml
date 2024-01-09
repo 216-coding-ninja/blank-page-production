@@ -28,5 +28,5 @@ jobs:
         server: ${{ secrets.GIT_CPANEL_SERVER }}
         username: ${{ secrets.GIT_CPANEL_USER }}
         password: ${{ secrets.GIT_CPANEL_PWD }}
-        protocol: ${{ secrets.GIT_CPANEL_PROTOCOL }}
+        # protocol: ${{ secrets.GIT_CPANEL_PROTOCOL }}
         local-dir: ./dist/
