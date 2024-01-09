@@ -123,7 +123,12 @@ function NavigationMenu(){
                         HOME
                     </TypographyLink>
                 </NavLink>
-               {/* <NavLink to='/aboutus'>ABOUT US</NavLink> */}   
+               <NavLink to='/aboutus'>
+                    <TypographyLink>
+                        ABOUT US
+                    </TypographyLink>
+                    
+                </NavLink>   
             </NavLinkBox>
             
         </NavigationMenuContainer>
