@@ -23,7 +23,7 @@ jobs:
         npm run build
       
     - name: Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      uses: appleboy/sftp-action@master
       with:
         server: ${{ secrets.GIT_CPANEL_SERVER }}
         username: ${{ secrets.GIT_CPANEL_USER }}
