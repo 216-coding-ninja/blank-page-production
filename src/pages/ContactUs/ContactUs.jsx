@@ -128,7 +128,7 @@ function ContactUs(){
                             src={EmailAddress}
                         />
                         
-                        <SocialText>info@blankpageproduction</SocialText>
+                        <SocialText>info@blankpageproduction.co.za</SocialText>
                     </SocialContainer>
 
                 </SocialList>

@@ -7,5 +7,6 @@ export const Colors = {
     LightGrey: '#EBECF0',
     DarkGrey: '#242424',
     OpacWhite: '#EBEEF3',
-    Charcoal: '#262626'
+    Charcoal: '#262626',
+    StrokeGrey: '#696868'
 }

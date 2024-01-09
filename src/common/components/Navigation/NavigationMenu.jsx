@@ -14,7 +14,8 @@ import
 from '@/assets/icons/search.png';
 
 import { 
-    Link 
+    Link,
+    useLocation 
 } from 'react-router-dom';
 
 const NavigationMenuContainer = styled(Box)({
@@ -67,7 +68,7 @@ const NavLinkBox = styled(Box)(({ theme }) => ({
     }
 }))
 
-const NavLink = styled(Link)(({ theme }) => ({
+const NavLink = styled(Link)(({ theme, isActive }) => ({
     color: Colors.White,
     textDecoration: 'none',
     fontSize: '13px',
@@ -77,10 +78,10 @@ const NavLink = styled(Link)(({ theme }) => ({
     '&:hover': {
         color: Colors.Orange
     },
-    '&.active': { 
+    ...(isActive && {
         color: Colors.Orange,
-        fontWeight: 'bold',
-    },
+        fontWeight: 'bold'
+    })
 }));
 
 const TypographyLink = styled(Typography)({
@@ -99,6 +100,8 @@ const InputContent = styled(Box)({
 })
 
 function NavigationMenu(){
+
+
     return(
         <NavigationMenuContainer>
             <InputContent>
@@ -118,12 +121,12 @@ function NavigationMenu(){
             </InputContent>
 
             <NavLinkBox>
-                <NavLink to='/'>
+                <NavLink isActive={location.pathname === '/'} to='/'>
                     <TypographyLink>
                         HOME
                     </TypographyLink>
                 </NavLink>
-               <NavLink to='/aboutus'>
+               <NavLink isActive={location.pathname === '/aboutus'} to='/aboutus'>
                     <TypographyLink>
                         ABOUT US
                     </TypographyLink>

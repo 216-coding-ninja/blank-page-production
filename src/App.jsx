@@ -36,7 +36,7 @@ function App() {
                 <Helmet>
                   <title>Home</title>
                   <meta 
-                    name="description"
+                    name="Blank Page Productions"
                     content="Capturing the heart and soul of sports through the art of storytelling."
                   />
                   <link 

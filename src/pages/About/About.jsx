@@ -23,6 +23,7 @@ import
     Scroll 
 from '@/assets/icons/scroll.png'
 import Contact from './components/Contact';
+import { typography } from '@/common/theme/typography';
 
 const AboutContainer = styled(Box)({
     backgroundImage: `url(${SoccerField})`,
@@ -57,6 +58,7 @@ const AboutDivider = styled(Divider)(({ theme }) => ({
 
 const AboutDescription = styled(Typography)(({ theme }) => ({
     color: Colors.White,
+    fontSize: '16px',
     fontWeight: '200',
     maxWidth: '930px',
     textAlign: 'center',
@@ -91,7 +93,7 @@ function About(){
                 <AboutTitle>ABOUT US</AboutTitle>
                 <BlockPattern src={Block} alt='block-pattern'/>
                 <AboutDivider />
-                <AboutDescription fontWeight={ '200' }>
+                <AboutDescription>
                     In the <SpanText>dynamic world of media production</SpanText>, 
                     there are those who craft narratives that transcend 
                     the boundaries of traditional storytelling. Blank Page 

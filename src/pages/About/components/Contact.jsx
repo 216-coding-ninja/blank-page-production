@@ -19,7 +19,7 @@ import DarkMap from "./GoogleMap";
 
 const ContactContainer = styled(Box)(({ theme }) => ({
     backgroundColor: Colors.Charcoal,
-    padding: theme.spacing(4, 3),
+    padding: theme.spacing(4, 4),
     display: 'flex',
     gap: theme.spacing(4),
     zIndex: 2
@@ -39,7 +39,8 @@ const ContactText = styled(Box)({
 const ContactDescription = styled(Typography)(({ theme }) => ({
     fontStyle: 'italic',
     color: Colors.White,
-    paddingBottom: theme.spacing(1)
+    paddingBottom: theme.spacing(1),
+    fontSize: '13px'
 }));
 
 const SocialContainer = styled(Box)(({ theme }) => ({
@@ -59,7 +60,7 @@ const InstaIcon = styled('img')({
 
 const SocialText = styled(Typography)({
     color: Colors.White,
-    fontSize: '12px'
+    fontSize: '12px',
 })
 
 const ContactForm = styled('form')(({ theme }) => ({
@@ -73,11 +74,11 @@ const CustomTextField = styled(TextField)(({ theme }) => ({
     marginBottom: theme.spacing(2.5),
     '& .MuiInputBase-input': {
       color: Colors.White,
-      paddingBlock: theme.spacing(1.5)
+      paddingBlock: theme.spacing(1.3)
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
-        borderColor: Colors.White,
+        borderColor: Colors.StrokeGrey,
       },
       '&:hover fieldset': {
         borderColor: Colors.Orange,
@@ -105,7 +106,7 @@ function Contact(){
                         src={Email}
                         alt='email'
                     />
-                    <SocialText>info@blankpageproduction</SocialText>
+                    <SocialText>info@blankpageproduction.co.za</SocialText>
                 </SocialContainer>
                 <SocialContainer>
                     <InstaIcon 
