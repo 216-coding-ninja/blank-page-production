@@ -28,11 +28,12 @@ const NavigationMenuContainer = styled(Box)({
 const SearchInput = styled('input')(({ theme }) => ({
     backgroundColor: Colors.LightGrey,
     border: 'none',
-    borderRadius: '2px',
+    borderRadius: '3px',
     outline: 'none',
     paddingLeft: theme.spacing(2),
-    paddingBlock: theme.spacing(1),
+    paddingBlock: theme.spacing(1.2),
     marginLeft: theme.spacing(2),
+    width: '255px',
 
     '&::placeholder': {
         color: Colors.Grey
@@ -68,7 +69,7 @@ const NavLinkBox = styled(Box)(({ theme }) => ({
     }
 }))
 
-const NavLink = styled(Link)(({ theme, isActive }) => ({
+const NavLink = styled(Link)(({ theme, isactive }) => ({
     color: Colors.White,
     textDecoration: 'none',
     fontSize: '13px',
@@ -78,7 +79,7 @@ const NavLink = styled(Link)(({ theme, isActive }) => ({
     '&:hover': {
         color: Colors.Orange
     },
-    ...(isActive && {
+    ...(isactive && {
         color: Colors.Orange,
         fontWeight: 'bold'
     })
@@ -121,12 +122,12 @@ function NavigationMenu(){
             </InputContent>
 
             <NavLinkBox>
-                <NavLink isActive={location.pathname === '/'} to='/'>
+                <NavLink isactive={location.pathname === '/'} to='/'>
                     <TypographyLink>
                         HOME
                     </TypographyLink>
                 </NavLink>
-               <NavLink isActive={location.pathname === '/aboutus'} to='/aboutus'>
+               <NavLink isactive={location.pathname === '/aboutus'} to='/aboutus'>
                     <TypographyLink>
                         ABOUT US
                     </TypographyLink>

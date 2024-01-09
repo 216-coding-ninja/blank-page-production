@@ -1,6 +1,7 @@
 
 import { 
     Box, 
+    Button, 
     TextField, 
     Typography, 
     styled 
@@ -16,6 +17,10 @@ import Instagram from '@/assets/icons/instagram.png'
 import BlankPageBtn from "@/common/components/BlankPageBtn";
 import GoogleMap from "./GoogleMap";
 import DarkMap from "./GoogleMap";
+import { 
+    useForm, 
+    ValidationError 
+} from '@formspree/react';
 
 const ContactContainer = styled(Box)(({ theme }) => ({
     backgroundColor: Colors.Charcoal,
@@ -91,9 +96,23 @@ const CustomTextField = styled(TextField)(({ theme }) => ({
       color: Colors.Orange,
     },
   }));
+
+  const SubmitMessage = styled(Typography)({
+    color: Colors.White,
+    fontSize: '20px'
+  })
   
 
 function Contact(){
+    const [state, handleSubmit] = useForm("meqyqydn");
+    if (state.succeeded) {
+        return (
+            <SubmitMessage>
+                Thank you for contacting us! We will get in touch with you shortly.
+            </SubmitMessage>
+        );
+    }
+
     return(
         <ContactContainer>
             <ContactText>
@@ -116,24 +135,41 @@ function Contact(){
                     <SocialText>blankpage_productions</SocialText>
                 </SocialContainer>
                 
-                <ContactForm>
+                <ContactForm onSubmit={handleSubmit}>
                     <CustomTextField 
                         placeholder="Your name & surname"
                         type="text"
+                        name='name'
                     />
 
                     <CustomTextField 
                         placeholder="Your email address"
                         type="email"
+                        name='email'
+                    />
+
+                    <ValidationError 
+                        prefix="Email" 
+                        field="email"
+                        errors={state.errors}
                     />
 
                     <CustomTextField 
                         placeholder="Write your message here"
                         type="text"
+                        name='message'
+                    />
+
+                    <ValidationError 
+                        prefix="Message" 
+                        field="message"
+                        errors={state.errors}
                     />
 
                     <BlankPageBtn 
                         btnText={'Send Message'}
+                        type="submit"
+                        disabled={state.submitting}
                     />
                     
                 </ContactForm>

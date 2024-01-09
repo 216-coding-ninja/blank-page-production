@@ -8,13 +8,14 @@ import {
     Colors
 } from '@/common/constants';
 
-const BlankPageBtnBox = styled(Box)(({ theme }) => ({
+const BlankPageBtnBox = styled('button')(({ theme }) => ({
     padding: theme.spacing(2, 2),
     color: Colors.White,
     backgroundColor: Colors.Orange,
     width: '140px',
     textAlign: 'center',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    border: 'none'
 }))
 
 function BlankPageBtn({ btnText, onClick }){

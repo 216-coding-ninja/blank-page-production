@@ -58,9 +58,9 @@ const AboutDivider = styled(Divider)(({ theme }) => ({
 
 const AboutDescription = styled(Typography)(({ theme }) => ({
     color: Colors.White,
-    fontSize: '16px',
+    fontSize: '15px',
     fontWeight: '200',
-    maxWidth: '930px',
+    maxWidth: '900px',
     textAlign: 'center',
     paddingBottom: theme.spacing(6)
 }));
