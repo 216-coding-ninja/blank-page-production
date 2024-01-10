@@ -1,0 +1,22 @@
+
+::selection {
+    background-color: #E94E1A; 
+    color: #fff; 
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* For Webkit (Chrome, Safari, etc.) - Track */
+  ::-webkit-scrollbar-track {
+    background: #EBECF0; 
+  }
+  
+  /* For Webkit (Chrome, Safari, etc.) - Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #E94E1A; 
+
+  }
+
+  
