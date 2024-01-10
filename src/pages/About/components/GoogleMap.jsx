@@ -18,7 +18,7 @@ function GoogleMap(){
                 height="373" 
                 allowfullscreen=""
                 style={{ filter: 'invert(90%) hue-rotate(180deg)', border: 'none' }}
-                loading="lazy" 
+                loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
         </MapContainer>

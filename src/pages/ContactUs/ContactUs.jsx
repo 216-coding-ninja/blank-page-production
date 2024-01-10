@@ -85,7 +85,7 @@ const SocialContainer = styled(Box)(({ theme }) => ({
 
 const SocialText = styled(Typography)({
     color: Colors.White,
-    fontSize: '12px'
+    fontSize: '13px'
 })
 
 const LinkSocial = styled('a')({

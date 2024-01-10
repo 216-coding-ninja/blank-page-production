@@ -2,7 +2,7 @@
 import NavigationBar from "@/common/components/NavigationBar"
 import Hero from "./pages/Hero/Hero"
 
-import { createTheme, CssBaseline, ThemeProvider, styled } from "@mui/material";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { typography } from "./common/theme/typography";
 
 import About from "./pages/About/About";
@@ -12,14 +12,15 @@ import {
   Routes, 
   Route 
 } from "react-router-dom";
+import { styled } from '@mui/system';
 import { Fragment } from "react";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import { Helmet } from "react-helmet-async";
 
+
 const theme = createTheme({
   typography: typography()
 })
-
 
 function App() {
   return (
@@ -34,9 +35,9 @@ function App() {
             element={
               <Fragment>
                 <Helmet>
-                  <title>Home</title>
+                  <title>Unveiling Sports Tales - Blank Page Productions</title>
                   <meta 
-                    name="Blank Page Productions"
+                    name="description"
                     content="Capturing the heart and soul of sports through the art of storytelling."
                   />
                   <link 
@@ -54,6 +55,17 @@ function App() {
             path='/aboutus' 
             element={
               <Fragment>
+              <Helmet>
+                <title>About Us - Blank Page Productions</title>
+                <meta 
+                  name="description"
+                  content="In the dynamic world of media production, there are those who craft narratives that transcend the boundaries of traditional storytelling"
+                />
+                <link 
+                  rel="canonical" 
+                  href="https://blankpageproductions.co.za/" 
+                />
+              </Helmet>
                 <NavigationBar />
                 <About />
                 <ContactUs />
