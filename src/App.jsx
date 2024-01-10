@@ -35,7 +35,7 @@ function App() {
             element={
               <Fragment>
                 <Helmet>
-                  <title>Unveiling Sports Tales - Blank Page Productions</title>
+                  <title>Home - Blank Page Productions: Sports Storytelling</title>
                   <meta 
                     name="description"
                     content="Capturing the heart and soul of sports through the art of storytelling."

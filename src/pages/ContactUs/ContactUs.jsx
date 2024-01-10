@@ -78,7 +78,7 @@ const SocialList = styled(Box)(({ theme }) => ({
 
 const SocialContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
-    gap: theme.spacing(1),
+    gap: theme.spacing(0.2),
     alignItems: 'center',
     paddingBlock: theme.spacing(0.4)
 }));
